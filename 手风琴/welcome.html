@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #333;
+        }
+        .wrap{
+            display: flex;
+            width: 90vw;
+        }
+        .card{
+            background-size:auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50px;
+            color: #fff;
+            flex: 0.5;
+            cursor: pointer;
+            height: 80vh;
+            position: relative;
+            margin: 10px;
+            transition:flex 0.7s cubic-bezier(0.05,0.6,0.4,0.9);
+        }
+        .card h3{
+            font-size: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0.5;
+            /* transition:opacity 0s ease-in 0s; */
+        }
+        .active{
+            /* 通过弹性布局，改变每个盒子的收缩 */
+            flex: 5;
+        }
+        .active h3{
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+        @media(max-width: 500px){
+            .wrap{
+                width: 100vw;
+            }
+            .card:nth-child(4){
+                display: none;
+            }
+            .card:nth-child(5){
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card" style="background-image:url(img/1.jpg);">
+            <h3>bili</h3>
+        </div>
+        <div class="card" style="background-image:url(img/2.jpg);">
+            <h3>bili</h3>
+        </div>
+        <div class="card" style="background-image:url(img/3.jpg);">
+            <h3>bili</h3>
+        </div>
+        <div class="card" style="background-image:url(img/4.jpg);">
+            <h3>bili</h3>
+        </div>
+        <div class="card" style="background-image:url(img/5.jpg);">
+            <h3>bili</h3>
+        </div>
+    </div>
+    <script>
+        var wrap =document.querySelector(".wrap");
+        var cards =document.querySelectorAll(".card");
+
+        for(var i=0;i<cards.length;i++){
+            cards[i].addEventListener("mouseover",function(){
+                //事先清除
+                removeActive();
+                this.classList.add("active")
+            })
+        }
+        function removeActive(){
+            for(var j=0;j<cards.length;j++){
+                cards[j].classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>

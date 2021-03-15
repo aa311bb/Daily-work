@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+        .cont{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img{
+            width: 458px;
+            height: 600px;
+            background-color: black;
+            margin-left: 30px;
+            /* background-repeat: no-repeat;
+            background-size: cover; */
+            transition: 2s;
+   
+        }
+        .img:hover{
+            background-position: bottom center;
+        }
+        .img1{
+            background: url(img/1.jpg);
+
+        }
+        .img2{
+            background: url(img/2.jpg);
+        }
+        .img3{
+            background: url(img/3.jpg);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="img img1"></div>
+        <div class="img img2"></div>
+        <div class="img img3"></div>
+    </div>
+</body>
+</html>

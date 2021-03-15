@@ -1,0 +1,133 @@
+nav{
+    width: 100%;
+    height: 56px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 10;
+}
+.nav-left{
+    width: 500px;
+    height: 36px;
+}
+.nav-left ul{
+    width: 500px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+}
+.nav-left ul li{
+    /* width: 28px; */
+    height: 32px;
+    margin-left: 15px;
+    line-height: 32px;
+}
+.nav-left ul li a{
+    font-size: 14px;
+    color: #fff;
+    width: 28px;
+    height: 32px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3)
+}
+.nav-left ul li:nth-child(1) a img,.nav-left ul li:nth-child(9) a img{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin-right: 2px;
+    position: relative;
+    top: 4px;
+}
+.nav-search{
+    width: 500px;
+    height: 36px;
+    margin-right: 20px;
+}
+.nav-search form{
+    width: 100%;
+    height: 36px;
+    position: relative;
+}
+.nav-search form input{
+    width: 100%;
+    height: 34px;
+    border: none;
+    box-shadow: none;
+    line-height: 34px;
+    color: #999;
+    overflow: hidden;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+.nav-search form div{
+    position: absolute;
+    top: 0;
+    left: 498px;
+    width: 48px;
+    height: 34px;
+    background-color: #e7e7e7;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.nav-search form div button{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background: url("../img/search1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    cursor: pointer;
+}
+.nav-right{
+    width: 454px;
+    height: 34px;
+    display: flex;
+    margin-right: 30px;
+}
+.nav-right .user{
+    width: 340px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+}
+.nav-right .user span{
+    margin-left: 10px;
+}
+.nav-right .user span a{
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    color: #fff;
+}
+.nav-right .user span:nth-child(1) a div{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background: url(../img/head.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+.nav-right .submit{
+    width: 100px;
+    height: 34px;
+    background-color: #fb7299;
+    text-align: center;
+    line-height: 34px;
+    border-radius: 2px;
+    margin-left: 5px;
+}
+.nav-right .submit a{
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    color: #fff;
+}

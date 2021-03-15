@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 1000px;
+            min-height: 200px;
+            border:1px solid #ddd;
+            position: relative;
+        }
+        .move{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px #000;
+        }
+        .move img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .hidden{
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./img/1.jpg" width="100%" alt="">
+        <div class="move">
+            <img src="./img/1.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        let container=document.querySelector(".container");
+        let move =document.querySelector(".move")
+        let bigImg=document.querySelector(".move img")
+
+        container.onmousemove =function(e){
+            //水平
+            let x =e.pageX;
+            let l =x-container.offsetLeft-move.offsetWidth/2;
+            if(l<=0){
+                l=0;
+            }
+            if(l>=container.offsetWidth-move.offsetWidth){
+                l=container.offsetWidth-move.offsetWidth;
+            }
+            move.style.left=l+"px";
+            let bigMoveX;
+            bigMoveX = l/container.offsetWidth*bigImg.offsetWidth+move.offsetWidth/2;
+            bigImg.style.left=-bigMoveX+"px";
+
+            //垂直
+            let y =e.pageY;
+            let h =y-container.offsetTop-move.offsetHeight/2;
+            if(h<=0){
+                h=0;
+            }
+            if(h>=container.offsetHeight-move.offsetHeight){
+                h=container.offsetHeight-move.offsetHeight;
+            }
+            move.style.top=h+"px";
+            let bigMoveY;
+            bigMoveY = h/container.offsetHeight*bigImg.offsetHeight+move.offsetHeight/2;
+            bigImg.style.top=-bigMoveY+"px";
+        }
+        container.onmouseover=function(){
+            move.classList.remove("hidden")
+        };
+        container.onmouseout=function(){
+            move.classList.add("hidden")
+        };
+    </script>
+</body>
+
+</html>
